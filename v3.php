@@ -113,7 +113,9 @@ foreach ($pets as $pet) {
             $clear++;
         }
     }
-    echo $echohead . '成功清理宠物' . $petname . $clear . '个粑粑' . PHP_EOL;
+    if ($clear > 0) {
+        echo $echohead . '成功清理宠物' . $petname . $clear . '个粑粑' . PHP_EOL;
+    }
     $foodamount = $foodamount / 20; //喂食
     $feed       = 0;
     for ($i = $foodamount; $i < 5; $i++) {
@@ -126,5 +128,7 @@ foreach ($pets as $pet) {
             echo $echohead . '给宠物' . $petname . '喂食失败' . PHP_EOL;
         }
     }
-    echo $echohead . '成功给宠物' . $petname . '喂食' . $feed . '次' . PHP_EOL;
+    if ($feed > 0) {
+        echo $echohead . '成功给宠物' . $petname . '喂食' . $feed . '次' . PHP_EOL;
+    }
 }
